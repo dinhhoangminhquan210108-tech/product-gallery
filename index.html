@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cửa hàng demo với bộ lọc sản phẩm và giỏ hàng lưu bằng localStorage.">
+  <title>MOON — Product Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="MOON trang chủ"><span class="brand-mark">M</span> MOON<span class="brand-dot">.</span></a>
+    <nav class="header-links" aria-label="Điều hướng chính">
+      <a href="#products">Sản phẩm</a>
+      <a href="#about">Về chúng tôi</a>
+    </nav>
+    <button class="cart-trigger" id="cart-toggle" type="button" aria-label="Mở giỏ hàng">
+      <span class="cart-icon" aria-hidden="true">♧</span>
+      <span>Giỏ hàng</span>
+      <span class="cart-badge" id="cart-count" aria-live="polite">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> CURATED EVERYDAY GOODS</p>
+        <h1>Những điều nhỏ<br>làm nên <em>khác biệt.</em></h1>
+        <p class="hero-description">Khám phá bộ sưu tập được chọn lọc cho nhịp sống hiện đại — tối giản, hữu dụng và đầy cảm hứng.</p>
+        <a class="hero-link" href="#products">Khám phá bộ sưu tập <span>↗</span></a>
+      </div>
+      <div class="hero-art" role="img" aria-label="Không gian sống tối giản với đồ dùng được tuyển chọn">
+        <div class="hero-note">LESS, BUT<br>BETTER.</div>
+        <div class="hero-caption">THE EVERYDAY EDIT · VOL. 01</div>
+      </div>
+    </section>
+
+    <section class="shop-section" id="products">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE COLLECTION</p>
+          <h2>Sản phẩm nổi bật</h2>
+        </div>
+        <p class="product-count" id="product-count">8 sản phẩm</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="filter-list" id="category-filters" aria-label="Lọc theo danh mục"></div>
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="search-input" type="search" placeholder="Tìm sản phẩm..." autocomplete="off">
+        </label>
+      </div>
+
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <p class="empty-state" id="empty-state" hidden>Không tìm thấy sản phẩm phù hợp.</p>
+    </section>
+
+    <section class="about-strip" id="about">
+      <span class="about-symbol">✳</span>
+      <div><p class="eyebrow">A LITTLE MORE THOUGHTFUL</p><h2>Chọn ít hơn. Dùng lâu hơn.</h2></div>
+      <p>Mỗi món đồ đều hướng đến sự tiện dụng, vẻ đẹp giản dị và giá trị sử dụng mỗi ngày.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="#"><span class="brand-mark">M</span> MOON<span class="brand-dot">.</span></a>
+    <p>© 2026 MOON Studio · Demo project</p>
+    <a href="#products">Lên đầu trang ↑</a>
+  </footer>
+
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Giỏ hàng" aria-hidden="true">
+    <div class="drawer-header">
+      <div><p class="eyebrow">YOUR SELECTION</p><h2>Giỏ hàng <span id="drawer-count">(0)</span></h2></div>
+      <button class="icon-button" id="close-cart" type="button" aria-label="Đóng giỏ hàng">×</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-empty" id="cart-empty"><span>♧</span><p>Giỏ hàng đang trống.</p><button id="continue-shopping" type="button">Tiếp tục mua sắm</button></div>
+    <div class="cart-footer" id="cart-footer">
+      <div class="total-row"><span>Tạm tính</span><strong id="cart-total">0 ₫</strong></div>
+      <p class="cart-hint">Phí vận chuyển được tính ở bước thanh toán.</p>
+      <button class="checkout-button" type="button" disabled>Thanh toán <span>→</span></button>
+      <button class="clear-cart" id="clear-cart" type="button">Xóa toàn bộ giỏ hàng</button>
+    </div>
+  </aside>
+</body>
+</html>
